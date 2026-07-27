@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Daniel Pantuso - Giardiniere a Milano</title>
+  <desc id="desc">Immagine social provvisoria con prato, alberi e titolo del servizio di giardinaggio.</desc>
+  <rect width="1200" height="630" fill="#edf8ef"/>
+  <circle cx="980" cy="120" r="72" fill="#9fcf3a"/>
+  <path d="M0 430 C180 350 320 470 520 390 C730 300 870 420 1200 310 L1200 630 L0 630 Z" fill="#c8dfcb"/>
+  <path d="M0 500 C220 420 430 520 620 445 C820 365 990 460 1200 395 L1200 630 L0 630 Z" fill="#0f7d46"/>
+  <g fill="#0b7a43">
+    <circle cx="170" cy="330" r="70"/>
+    <rect x="158" y="360" width="24" height="120" rx="12" fill="#73512d"/>
+    <circle cx="1010" cy="340" r="88"/>
+    <rect x="996" y="385" width="28" height="135" rx="14" fill="#73512d"/>
+  </g>
+  <rect x="86" y="92" width="720" height="250" rx="24" fill="rgba(255,255,255,0.82)"/>
+  <text x="130" y="170" fill="#05452a" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Daniel Pantuso</text>
+  <text x="130" y="245" fill="#0f2418" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="800">Giardiniere a Milano</text>
+  <text x="130" y="302" fill="#4f6a59" font-family="Arial, Helvetica, sans-serif" font-size="28">Manutenzione giardini, siepi e aree verdi</text>
+</svg>

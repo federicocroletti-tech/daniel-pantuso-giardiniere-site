@@ -1,0 +1,255 @@
+<header class="site-header">
+  <div class="site-header__inner container">
+    <a class="brand" href="#top" aria-label="Daniel Pantuso, torna all'inizio">
+      <span class="brand__mark" aria-hidden="true">DP</span>
+      <span class="brand__text">
+        <span class="brand__name">Daniel Pantuso</span>
+        <span class="brand__subtitle">Giardiniere e manutenzione verde</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Navigazione principale">
+      @for (link of navLinks; track link.href) {
+        <a [href]="link.href">{{ link.label }}</a>
+      }
+    </nav>
+
+    <a class="header-call" [href]="phoneLink">Chiama</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero section" aria-labelledby="hero-title">
+    <div class="hero__inner container">
+      <div class="hero__content">
+        <p class="eyebrow">Preventivi chiari e interventi curati</p>
+        <h1 id="hero-title">Daniel Pantuso - Giardiniere a Milano</h1>
+        <p class="hero__claim">Cura del verde e manutenzione giardini</p>
+        <p class="hero__text">
+          Daniel Pantuso offre servizi di giardinaggio per privati, condomini e piccole attività:
+          taglio prato, potatura siepi, pulizia aree verdi e manutenzioni programmate a Milano e
+          zone limitrofe.
+        </p>
+
+        <div class="hero__actions" aria-label="Azioni principali">
+          <a class="button button--primary" href="#preventivo">Richiedi preventivo</a>
+          <a class="button button--secondary" href="#servizi">Vedi servizi</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Informazioni rapide su Daniel Pantuso">
+        <div
+          class="hero-card__visual"
+          role="img"
+          aria-label="Illustrazione stilizzata di area verde curata"
+        >
+          <span class="sun" aria-hidden="true"></span>
+          <span class="tree tree--left" aria-hidden="true"></span>
+          <span class="tree tree--right" aria-hidden="true"></span>
+          <span class="lawn" aria-hidden="true"></span>
+        </div>
+        <dl class="hero-stats">
+          @for (stat of heroStats; track stat.label) {
+            <div>
+              <dt>{{ stat.value }}</dt>
+              <dd>{{ stat.label }}</dd>
+            </div>
+          }
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <section id="servizi" class="section section--light" aria-labelledby="services-title">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Cosa può fare Daniel per il tuo verde</p>
+        <h2 id="services-title">Servizi di giardinaggio</h2>
+      </div>
+
+      <div class="service-grid">
+        @for (service of services; track service.title) {
+          <article class="service-card">
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.description }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="lavori" class="section" aria-labelledby="works-title">
+    <div class="container">
+      <div class="section-heading section-heading--wide">
+        <p class="eyebrow">Interventi e manutenzioni</p>
+        <h2 id="works-title">Lavori recenti</h2>
+        <p>
+          Qui saranno inserite foto reali dei lavori di Daniel: giardini sistemati, siepi potate,
+          cortili ripuliti e manutenzioni stagionali.
+        </p>
+      </div>
+
+      <div class="work-grid" aria-label="Placeholder grafici per lavori recenti">
+        @for (work of recentWorks; track work.title) {
+          <article class="work-card" aria-label="{{ work.description }}">
+            <div class="work-card__graphic" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <h3>{{ work.title }}</h3>
+            <p>{{ work.description }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--review" aria-labelledby="review-title">
+    <div class="container review-layout">
+      <div class="section-heading">
+        <p class="eyebrow">Clienti soddisfatti</p>
+        <h2 id="review-title">Cosa dicono i clienti</h2>
+      </div>
+
+      <figure class="review-card">
+        <blockquote>
+          "Lavoro preciso e pulito. Daniel è stato disponibile, puntuale e ha sistemato il giardino
+          meglio di come mi aspettassi."
+        </blockquote>
+        <figcaption>
+          <p class="review-card__rating">
+            <span aria-hidden="true">★★★★★</span>
+            <span>Valutazione: 5 stelle su 5</span>
+          </p>
+          <p>Recensione demo</p>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section section--light" aria-labelledby="why-title">
+    <div class="container why-layout">
+      <div class="section-heading">
+        <p class="eyebrow">Metodo di lavoro</p>
+        <h2 id="why-title">Perché scegliere Daniel</h2>
+      </div>
+
+      <ul class="reason-list">
+        @for (reason of reasons; track reason) {
+          <li>{{ reason }}</li>
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section id="preventivo" class="section estimate" aria-labelledby="estimate-title">
+    <div class="container estimate__inner">
+      <div class="estimate__content">
+        <p class="eyebrow">Richiesta via WhatsApp</p>
+        <h2 id="estimate-title">Richiedi una valutazione</h2>
+        <p>
+          Compila i dati principali e invia la richiesta su WhatsApp. Daniel potrà rispondere
+          velocemente e chiedere eventuali foto del giardino.
+        </p>
+      </div>
+
+      <form class="estimate-form" aria-label="Modulo richiesta preventivo WhatsApp">
+        <div class="form-field">
+          <label for="name">Nome</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            autocomplete="name"
+            [value]="name()"
+            (input)="updateName($event)"
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="phone">Telefono</label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+            inputmode="tel"
+            [value]="phone()"
+            (input)="updatePhone($event)"
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="area">Zona intervento</label>
+          <input
+            id="area"
+            name="area"
+            type="text"
+            autocomplete="address-level2"
+            [value]="area()"
+            (input)="updateArea($event)"
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="service">Servizio richiesto</label>
+          <select
+            id="service"
+            name="service"
+            [value]="requestedService()"
+            (change)="updateRequestedService($event)"
+          >
+            @for (option of serviceOptions; track option) {
+              <option [value]="option">{{ option }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="form-field form-field--full">
+          <label for="message">Messaggio</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            [value]="message()"
+            (input)="updateMessage($event)"
+          ></textarea>
+        </div>
+
+        <div class="form-actions">
+          <a
+            class="button button--primary form-actions__link"
+            [href]="whatsappLink()"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Invia richiesta preventivo su WhatsApp con testo precompilato"
+          >
+            Invia richiesta su WhatsApp
+          </a>
+          <p>Il link apre WhatsApp con il messaggio già compilato. Nessun dato viene salvato.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer id="contatti" class="site-footer" aria-labelledby="footer-title">
+  <div class="container site-footer__inner">
+    <div>
+      <h2 id="footer-title">Daniel Pantuso</h2>
+      <p>Giardiniere e manutenzione aree verdi</p>
+      <p>Milano e zone limitrofe</p>
+    </div>
+
+    <address class="footer-contacts">
+      <a [href]="phoneLink">Telefono: {{ displayPhone }}</a>
+      <span>Email: da inserire</span>
+      <span>Partita IVA: da inserire</span>
+      <a [href]="whatsappQuickLink" target="_blank" rel="noopener noreferrer"
+        >Link rapido a WhatsApp</a
+      >
+    </address>
+  </div>
+  <p class="site-footer__copy">© 2026 Daniel Pantuso. Tutti i diritti riservati.</p>
+</footer>
