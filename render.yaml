@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: daniel-pantuso-giardiniere-site
+    runtime: static
+    plan: free
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist/daniel-pantuso-giardiniere-site/browser
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
